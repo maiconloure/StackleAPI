@@ -1,4 +1,5 @@
-from stackle.asgi import channel_layer
+from stackle.asgi import application
+
 # App Engine by default looks for a main.py file at the root of the app
 # directory with a WSGI-compatible object called app.
 # This file imports the WSGI-compatible object of your Django app,
@@ -6,4 +7,4 @@ from stackle.asgi import channel_layer
 # App Engine without additional configuration.
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
 # entrypoint: gunicorn -b :$PORT mysite.wsgi
-app = channel_layer
+app = application
