@@ -13,4 +13,4 @@ from chat.channels_app.routing import application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "chat.settings")
 
-channel_layer = application()
+application = application()
