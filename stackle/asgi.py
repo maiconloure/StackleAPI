@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/
 
 import os
 
-from channels.asgi import get_channel_layer
+from chat.channels_app.routing import application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "chat.settings")
 
-channel_layer = get_channel_layer()
+channel_layer = application()

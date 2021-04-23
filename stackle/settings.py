@@ -26,7 +26,7 @@ SECRET_KEY = '%r1g(^@t+-fst!wr7q8zv-$)il5c8rccdkkb@!hbkrnm$c8_^3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','api-social-post.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','localhost']
 
 
 # Application definition
@@ -69,7 +69,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": ['10.62.51.67', 6379)],
+            "hosts": [('10.62.51.67', 6379)],
         },
     },
 }
@@ -84,6 +84,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE_CLASSES = (
@@ -91,7 +92,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',  
 )
 
-CORS_ORIGIN_WHITELIST = ()
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 ROOT_URLCONF = 'stackle.urls'
 
